@@ -23,7 +23,7 @@
         basedpyright.enable = true;
         html.enable = true;
         bashls.enable = true;
-        rust_analyzer.enable = true;
+        rust_analyzer = { enable = true; installRustc = false; installCargo = false; };
         purescriptls = {
           enable = true;
           package = null;
