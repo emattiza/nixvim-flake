@@ -9,10 +9,13 @@
 
   outputs = { nixvim, flake-parts, ... }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [
+        inputs.flake-parts.flakeModules.easyOverlay
+      ];
       systems =
         [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
 
-      perSystem = { system, pkgs, ... }:
+      perSystem = { config, system, pkgs, ... }:
         let
           nixvimLib = nixvim.lib.${system};
           nixvim' = nixvim.legacyPackages.${system};
@@ -34,6 +37,9 @@
           devShells = {
             default =
               pkgs.mkShell { packages = [ nvim pkgs.cowsay pkgs.cargo ]; };
+          };
+          overlayAttrs = {
+            neovimEM = nvim;
           };
           packages = {
             # Lets you run `nix run .` to start nixvim
