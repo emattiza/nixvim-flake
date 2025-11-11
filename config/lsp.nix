@@ -15,7 +15,7 @@
     lsp-format = { enable = true; };
     lspsaga = {
       enable = true;
-      lightbulb.sign = false;
+      settings.lightbulb.sign = false;
     };
     lsp = {
       enable = true;
