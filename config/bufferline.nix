@@ -3,7 +3,8 @@
     bufferline.enable = true;
     web-devicons.enable = true;
   };
-  keymaps = let mkNormal = other: other // { mode = "n"; };
+  keymaps = let
+    mkNormal = other: other // {mode = "n";};
   in [
     (mkNormal {
       key = "<leader>b1";
@@ -71,4 +72,3 @@
     })
   ];
 }
-

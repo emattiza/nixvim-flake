@@ -1,8 +1,9 @@
 {
   globals.mapleader = " ";
   globals.maplocalleader = ",";
-  plugins.which-key = { enable = true; };
-  keymaps = let mkNormal = other: other // { mode = "n"; };
+  plugins.which-key = {enable = true;};
+  keymaps = let
+    mkNormal = other: other // {mode = "n";};
   in [
     (mkNormal {
       key = "<leader>to";
