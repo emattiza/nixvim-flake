@@ -4,12 +4,12 @@
     autoEnableSources = true;
     settings = {
       sources = [
-        { name = "nvim_lsp"; }
-        { name = "crates"; }
-        { name = "path"; }
-        { name = "buffer"; }
-        { name = "treesitter"; }
-        { name = "vsnip"; }
+        {name = "nvim_lsp";}
+        {name = "crates";}
+        {name = "path";}
+        {name = "buffer";}
+        {name = "treesitter";}
+        {name = "vsnip";}
       ];
       mapping = {
         "<C-Space>" = "cmp.mapping.complete()";

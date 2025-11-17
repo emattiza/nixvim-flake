@@ -1,6 +1,7 @@
 {
   plugins.fugitive.enable = true;
-  keymaps = let mkNormal = other: other // { mode = "n"; };
+  keymaps = let
+    mkNormal = other: other // {mode = "n";};
   in [
     (mkNormal {
       key = "<leader>go";

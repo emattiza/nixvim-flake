@@ -1,17 +1,21 @@
-{ lib, pkgs, ... }: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   plugins = {
     efmls-configs = {
       enable = true;
       setup = {
-        bash = { linter = "shellcheck"; };
-        sh = { linter = "shellcheck"; };
+        bash = {linter = "shellcheck";};
+        sh = {linter = "shellcheck";};
         python = {
-          formatter = [ "ruff" ];
+          formatter = ["ruff"];
           linter = "ruff";
         };
       };
     };
-    lsp-format = { enable = true; };
+    lsp-format = {enable = true;};
     lspsaga = {
       enable = true;
       settings.lightbulb.sign = false;
@@ -22,7 +26,11 @@
         basedpyright.enable = true;
         html.enable = true;
         bashls.enable = true;
-        rust_analyzer = { enable = true; installRustc = false; installCargo = false; };
+        rust_analyzer = {
+          enable = true;
+          installRustc = false;
+          installCargo = false;
+        };
         purescriptls = {
           enable = true;
           package = null;
@@ -30,9 +38,10 @@
         elmls.enable = true;
         denols.enable = true;
         efm = {
-          extraOptions = { init_options = { documentFormatting = true; }; };
-          filetypes = [ "python" "sh" "bash" ];
-          onAttach.function = # lua
+          extraOptions = {init_options = {documentFormatting = true;};};
+          filetypes = ["python" "sh" "bash"];
+          onAttach.function =
+            # lua
             ''
               require("lsp-format").on_attach(client, bufnr)
             '';
@@ -73,7 +82,8 @@
       };
     };
   };
-  keymaps = let mkNormal = other: other // { mode = "n"; };
+  keymaps = let
+    mkNormal = other: other // {mode = "n";};
   in [
     (mkNormal {
       key = "<leader>ca";
@@ -112,5 +122,4 @@
       action = "<cmd>Lspsaga rename<CR>";
     })
   ];
-
 }
