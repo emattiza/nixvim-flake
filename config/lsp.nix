@@ -5,7 +5,6 @@
       setup = {
         bash = { linter = "shellcheck"; };
         sh = { linter = "shellcheck"; };
-        nix = { formatter = "nixfmt"; };
         python = {
           formatter = [ "ruff" ];
           linter = "ruff";
@@ -32,7 +31,7 @@
         denols.enable = true;
         efm = {
           extraOptions = { init_options = { documentFormatting = true; }; };
-          filetypes = [ "python" "sh" "nix" "bash" "python" ];
+          filetypes = [ "python" "sh" "bash" ];
           onAttach.function = # lua
             ''
               require("lsp-format").on_attach(client, bufnr)

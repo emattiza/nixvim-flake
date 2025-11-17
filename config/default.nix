@@ -15,5 +15,6 @@
     ./lsp.nix
     ./trouble.nix
     ./flash.nix
+    ./none-ls.nix
   ];
 }
