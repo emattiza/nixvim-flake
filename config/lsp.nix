@@ -6,7 +6,7 @@
   plugins = {
     efmls-configs = {
       enable = true;
-      setup = {
+      languages = {
         bash = {linter = "shellcheck";};
         sh = {linter = "shellcheck";};
         python = {
