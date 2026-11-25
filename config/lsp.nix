@@ -24,6 +24,7 @@
       enable = true;
       servers = {
         basedpyright.enable = true;
+        clangd.enable = true;
         html.enable = true;
         bashls.enable = true;
         rust_analyzer = {
